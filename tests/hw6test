@@ -1,0 +1,20 @@
+import unittest
+import pandas as pd
+from  import preprocess_data, scale_numeric_columns, remove_outliers
+
+class TestPreprocessing(unittest.TestCase):
+    def setUp(self):
+        # Load the dataset for testing
+        self.df = pd.read_csv("path/to/your/dataset.csv")
+        self.processed_df = preprocess_data(self.df)
+
+    def test_scale_numeric_columns(self):
+        scaled_df = scale_numeric_columns(self.processed_df)
+        self.assertIsInstance(scaled_df, pd.DataFrame)
+
+    def test_remove_outliers(self):
+        outlier_removed_df = remove_outliers(self.processed_df)
+        self.assertIsInstance(outlier_removed_df, pd.DataFrame)
+
+if __name__ == '__main__':
+    unittest.main()
