@@ -218,9 +218,20 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error
 
 # Function for model evaluation
-"""_summary_
-    """
+
 def evaluate_model(model, X_train, X_test, y_train, y_test):
+    """_summary_
+
+    Args:
+        model (_type_): _description_
+        X_train (_type_): _description_
+        X_test (_type_): _description_
+        y_train (_type_): _description_
+        y_test (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     model.fit(X_train, y_train)
     y_train_pred = model.predict(X_train)
     y_test_pred = model.predict(X_test)
